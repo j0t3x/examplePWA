@@ -27,6 +27,17 @@ index.prototype.init = function(){
    this.content.buildDom();
    this.content.render();
 
+
+   this.launchEvent('close');
+
+};
+
+index.prototype.onLoad = function(){
+  console.log( 'fukin shit', Date.now() );
+};
+
+index.prototype.onClose = function(){
+  console.log( 'final fukin shit', Date.now() );
 };
 
 module.exports = index;

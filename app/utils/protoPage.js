@@ -2,6 +2,7 @@ var event = require('./event.js');
 
 var protoPage = function( router ){
 
+  event.call(this);
   this.events = {};
   this.root;
   this.router = router;
@@ -15,7 +16,10 @@ protoPage.prototype.contructor = protoPage;
 /*OOP herency*/
 
 protoPage.prototype.build = function(){
+  this.setEvents();
 
+  //console.log( this.eventCallbacks )
+  this.launchEvent('load');
 
   this._init();
 };
@@ -28,8 +32,8 @@ protoPage.prototype.init = function(){};
 
 protoPage.prototype.setEvents = function(){
 
-  this.on( 'load', this._onLoad );
-  this.on( 'close', this._onClose );
+  this.on( 'load', this._onLoad.bind(this) );
+  this.on( 'close', this._onClose.bind(this) );
 
 };
 

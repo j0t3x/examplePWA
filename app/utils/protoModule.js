@@ -2,6 +2,8 @@ var event = require('./event.js');
 
 var protoModule = function(){
 
+
+  event.call(this);
   this.events = {};
   this.root;
 
@@ -26,8 +28,8 @@ protoModule.prototype.init = function(){};
 
 protoModule.prototype.setEvents = function(){
 
-  this.on( 'load', this._onLoad );
-  this.on( 'close', this._onClose );
+  this.on( 'load', this._onLoad.bind() );
+  this.on( 'close', this._onClose.bind() );
 
 };
 

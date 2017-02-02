@@ -40,6 +40,7 @@ appShell.prototype.init = function() {
      this.initContent();
      this.initFooter();
 
+     console.log(this)
 
 };
 
