@@ -12,9 +12,15 @@
     "type": "git",
     "url": ""
   },
+  "author": [
+    {
+      "name": "t3x",
+      "email": "tex@munera.io",
+      "url": "https://t3x.me"
+    }
+  ],
+  "license": "MIT",
   "keywords": [],
-  "author": "Tex",
-  "license": "ISC",
   "bugs": {
     "url": ""
   },
