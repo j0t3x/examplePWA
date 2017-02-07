@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=development webpack-dev-server --progress --display-error-details",
+    "start": "NODE_ENV=development webpack-dev-server --progress --display-error-details --port 8181 --host 0.0.0.0",
     "build": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress"
   },
   "repository": {
@@ -38,6 +38,7 @@
     "postcss-loader": "^0.13.0",
     "progressiverouter": "git+https://github.com/j0t3x/ProgressiveRouter.git",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
   }

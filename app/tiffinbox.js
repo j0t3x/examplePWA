@@ -7,5 +7,6 @@ var Router = require('progressiverouter');
 Router.addLib( 'dealer', Dealer );
 //set webpage routes
 Router.setRoute( '/', require('./pages/index.js') );
+Router.setRoute( '/landing', require('./pages/landing.js') );
 
 Router.chooseRoute( Router.currentPage.pathname );

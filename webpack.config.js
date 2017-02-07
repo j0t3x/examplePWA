@@ -14,6 +14,7 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.json$/, loader: 'json' },
+            { test: /\.(png|jpg)$/, loader: 'url-loader' },
             //{ test: /\.(js|jsx)$/, exclude: __dirname + '/node_modules/', loaders: ['babel-loader'] },
             { test: /\.css$/, loader: 'style!css?modules!postcss' },
             { test: /\.(woff2?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/, loader: "file?name=fonts/[name].[ext]" }

@@ -1,8 +1,7 @@
 var event = require('./event.js');
 
 var protoModule = function(){
-
-
+  
   event.call(this);
   this.events = {};
   this.root;
@@ -16,20 +15,23 @@ protoModule.prototype.contructor = protoModule;
 
 protoModule.prototype.build = function(){
 
-
+  this.setEvents();
+  
+  //console.log( this.eventCallbacks )
+  this.launchEvent('start');
+  
   this._init();
 };
 
 protoModule.prototype._init = function(){
-
   this.init();
 };
 protoModule.prototype.init = function(){};
 
 protoModule.prototype.setEvents = function(){
 
-  this.on( 'load', this._onLoad.bind() );
-  this.on( 'close', this._onClose.bind() );
+  this.on( 'start', this._onStart.bind(this) );
+  this.on( 'load', this._onLoad.bind(this) );
 
 };
 
@@ -43,15 +45,15 @@ protoModule.prototype.launchEvent = function( name ){
 
 };
 
+protoModule.prototype._onStart = function(){
+  this.onStart( arguments );
+};
 protoModule.prototype._onLoad = function(){
   this.onLoad( arguments );
 };
-protoModule.prototype._onClose = function(){
-  this.onClose( arguments );
-};
 
+protoModule.prototype.onStart = function(){};
 protoModule.prototype.onLoad = function(){};
-protoModule.prototype.onClose = function(){};
 
 
 module.exports = protoModule;
