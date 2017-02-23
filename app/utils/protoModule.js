@@ -1,10 +1,11 @@
 var event = require('./event.js');
 
 var protoModule = function(){
-  
+
   event.call(this);
   this.events = {};
   this.root;
+  this.flagIsModuleActive = false;
 
 };
 
@@ -13,14 +14,26 @@ protoModule.prototype = Object.create( event.prototype );
 protoModule.prototype.contructor = protoModule;
 /*OOP herency*/
 
+protoModule.prototype.activateModule = function(){
+  this.flagIsModuleActive = true;
+};
+protoModule.prototype.deactivateModule = function(){
+  this.flagIsModuleActive = false;
+};
+
 protoModule.prototype.build = function(){
 
-  this.setEvents();
-  
-  //console.log( this.eventCallbacks )
-  this.launchEvent('start');
-  
-  this._init();
+
+  if( this.flagIsModuleActive ){
+    this.setEvents();
+    //console.log( this.eventCallbacks )
+    this.launchEvent('start');
+    this._init();
+  }else{
+    //do nothing, this module shouldnt even load
+    return;
+  }
+
 };
 
 protoModule.prototype._init = function(){

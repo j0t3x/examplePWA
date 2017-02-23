@@ -24,7 +24,7 @@ module.exports = {
         require('autoprefixer')
     ],
     plugins: [
-        new webpack.BannerPlugin("Copyright Easy Taxi Peru SAC"),
+        new webpack.BannerPlugin("For the world"),
         new HtmlWebpackPlugin({
             template: __dirname + "/app/index.html"
         }),

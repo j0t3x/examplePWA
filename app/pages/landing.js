@@ -1,5 +1,6 @@
 var protoPage = require('../utils/protoPage.js');
 var appShell = require('../modules/imageshell/index.js');
+var contactForm = require('../modules/contactform/index.js');
 var ds = require('domshaper');
 
 var index = function(){
@@ -10,6 +11,12 @@ var index = function(){
   this.startedModuleAt = 0;
   this.endedModuleAt = 0;
 
+  //little trick >:)
+  var html  = new ds.Shape( document.getElementsByTagName('html')[0] );
+  html.domElement.style.width = '100%';
+  html.domElement.style.height = '100%';
+
+
 };
 
 /*OOP herency*/
@@ -19,19 +26,37 @@ index.prototype.contructor = index;
 
 index.prototype.init = function(){
 
-  
+  var addingpoint = this.addShellModule();
+  this.addContactFormModule( addingpoint );
+
+  this.content.buildDom();
+  this.content.render();
+  this.content.domElement.style.width = '100%';
+  this.content.domElement.style.height = '100%';
+
+  this.launchEvent('close');
+
+};
+
+index.prototype.addContactFormModule = function( moduleshape ){
+
+  var cf = new contactForm( this.router );
+  cf.activateModule();
+  this.modules.push( cf );
+  cf.build();
+  moduleshape.appendShape( cf.container );
+
+};
+
+index.prototype.addShellModule = function(){
+
   var aShell = new appShell( this.router );
+  aShell.activateModule();
   this.modules.push( aShell );
   aShell.build();
   this.content.appendShape( aShell.container );
-  
-  this.content.buildDom();
-  this.content.render();
-  
-  this.content.domElement.style.width = '100%';
-  this.content.domElement.style.height = '100%';
-  
-  this.launchEvent('close');
+
+  return aShell.bg;
 
 };
 
@@ -51,7 +76,7 @@ index.prototype.onLoad = function(){
 index.prototype.onClose = function(){
   //console.log('loaded module');
   this.endedModuleAt = Date.now();
-  console.log( 'this page loaded in', ( this.endedModuleAt - this.startedModuleAt ), 'ms' );
+  console.log( 'this page wawasilawa loaded in', ( this.endedModuleAt - this.startedModuleAt ), 'ms' );
 };
 
 

@@ -2,8 +2,6 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
-console.log(__dirname);
-
 module.exports = {
     devtool: 'eval-source-map',
     entry: __dirname + '/app/tiffinbox.js',
@@ -24,7 +22,7 @@ module.exports = {
         require('autoprefixer')
     ],
     plugins: [
-        new webpack.BannerPlugin("Copyright Easy Taxi Peru SAC"),
+        new webpack.BannerPlugin("For the world"),
         new HtmlWebpackPlugin({
             template: __dirname + "/app/index.tmp.html"
         }),

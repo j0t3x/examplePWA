@@ -15,7 +15,7 @@ var imgShell = function( router ) {
 
   //content group
   this.content;
-  
+
   this.startedModuleAt = 0;
   this.endedModuleAt = 0;
 
@@ -27,16 +27,16 @@ imgShell.prototype.contructor = imgShell;
 /*OOP herency*/
 
 imgShell.prototype.init = function() {
-  
+
   this.container = new ds.Shape('div');
   this.container.setClass( styles.cont );
   this.bg;
-  
+
   this.putbackground();
   this.puticon();
-  this.puttext();
-  this.putbutton();
-  
+  //this.puttext();
+  //this.putbutton();
+
   this.launchEvent('load');
 
 };

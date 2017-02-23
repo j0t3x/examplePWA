@@ -37,6 +37,7 @@
     "json-loader": "^0.5.4",
     "postcss-loader": "^0.13.0",
     "progressiverouter": "git+https://github.com/j0t3x/ProgressiveRouter.git",
+    "war": "git+https://github.com/j0t3x/war.git",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
