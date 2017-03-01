@@ -1,0 +1,12 @@
+[
+    {
+        "name" : "index",
+        "route": "/",
+        "path": "./pages/index.js"
+    },
+    {
+        "name" : "landing",
+        "route": "/landing",
+        "path": "./pages/landing.js"
+    }
+]
