@@ -21,7 +21,7 @@ var appShell = function(router) {
 };
 /*OOP herency*/
 appShell.prototype = Object.create(protoModule.prototype);
-appShell.prototype.contructor = appShell;
+appShell.prototype.constructor = appShell;
 /*OOP herency*/
 appShell.prototype.init = function() {
     this.container = new ds.Shape('div', 'app-index');

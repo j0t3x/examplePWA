@@ -23,7 +23,7 @@ var contactForm = function( router ) {
 
 /*OOP herency*/
 contactForm.prototype = Object.create( protoModule.prototype );
-contactForm.prototype.contructor = contactForm;
+contactForm.prototype.constructor = contactForm;
 /*OOP herency*/
 
 contactForm.prototype.init = function() {

@@ -12,7 +12,8 @@ War.setGlobalHeaders({
 Router.addLib('dealer', Dealer);
 Router.addLib('war', War);
 //set webpage routes
-for(var i=0; i<routes.length;i++){
+for (var i = 0; i < routes.length; i++) {
     Router.setRoute(routes[i].route, require(routes[i].path));
 }
+Router.setRoute('/', require('./pages/index.js'));
 Router.chooseRoute(Router.currentPage.pathname);
