@@ -23,7 +23,7 @@ var imgShell = function( router ) {
 
 /*OOP herency*/
 imgShell.prototype = Object.create( protoModule.prototype );
-imgShell.prototype.contructor = imgShell;
+imgShell.prototype.constructor = imgShell;
 /*OOP herency*/
 
 imgShell.prototype.init = function() {

@@ -15,7 +15,7 @@ var index = function() {
 };
 /*OOP herency*/
 index.prototype = Object.create(protoPage.prototype);
-index.prototype.contructor = index;
+index.prototype.constructor = index;
 /*OOP herency*/
 index.prototype.init = function() {
     var addingpoint = this.addShellModule();

@@ -12,7 +12,7 @@ var protoPage = function( router ){
 
 /*OOP herency*/
 protoPage.prototype = Object.create( event.prototype );
-protoPage.prototype.contructor = protoPage;
+protoPage.prototype.constructor = protoPage;
 /*OOP herency*/
 
 protoPage.prototype.build = function(){

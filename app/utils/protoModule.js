@@ -7,7 +7,7 @@ var protoModule = function() {
 };
 /*OOP herency*/
 protoModule.prototype = Object.create(event.prototype);
-protoModule.prototype.contructor = protoModule;
+protoModule.prototype.constructor = protoModule;
 /*OOP herency*/
 protoModule.prototype.activateModule = function() {
     this.flagIsModuleActive = true;

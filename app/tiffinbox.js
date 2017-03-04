@@ -1,18 +1,19 @@
 require('./tiffinhandles.js');
-
-var Dealer = require('./utils/dealer.js'); Dealer = new Dealer();
+var Dealer = require('./utils/dealer.js');
 var Router = require('progressiverouter');
-
-var War = require('war'); War = new War();
-War.setGlobalHeaders( {
-  'Accept': 'text/plain, text/html'
+var routes = require('./routes.json');
+var War = require('war');
+Dealer = new Dealer();
+War = new War();
+War.setGlobalHeaders({
+    'Accept': 'text/plain, text/html'
 });
-
 //set global libs
-Router.addLib( 'dealer', Dealer );
-Router.addLib( 'war', War );
+Router.addLib('dealer', Dealer);
+Router.addLib('war', War);
 //set webpage routes
-Router.setRoute( '/', require('./pages/index.js') );
-Router.setRoute( '/landing', require('./pages/landing.js') );
-
-Router.chooseRoute( Router.currentPage.pathname );
+for (var i = 0; i < routes.length; i++) {
+    Router.setRoute(routes[i].route, require(routes[i].path));
+}
+Router.setRoute('/', require('./pages/index.js'));
+Router.chooseRoute(Router.currentPage.pathname);
