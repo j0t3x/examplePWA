@@ -14,7 +14,7 @@ index.prototype.init = function() {
     var aShell = new appShell(this.router);
     aShell.activateModule();
     this.modules.push(aShell);
-    aShell.build(null,null,null);
+    aShell.build("null",null,"null");
     this.content.appendShape(aShell.container);
     this.content.buildDom();
     this.content.render();

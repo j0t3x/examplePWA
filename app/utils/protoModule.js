@@ -20,7 +20,7 @@ protoModule.prototype.build = function() {
         this.setEvents();
         //console.log( this.eventCallbacks )
         this.launchEvent('start');
-        this._init(arguments[0]);
+        this._init(arguments);
     } else {
         //do nothing, this module shouldnt even load
         return;

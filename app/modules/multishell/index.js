@@ -26,9 +26,10 @@ appShell.prototype.constructor = appShell;
 appShell.prototype.init = function() {
     this.container = new ds.Shape('div', 'app-index');
     this.container.setClass('');
-    this.initHeader(arguments[0]);
-    this.initContent(arguments[1]);
-    this.initFooter(arguments[2]);
+    var args = arguments[0];
+    this.initHeader(args[0]);
+    this.initContent(args[1]);
+    this.initFooter(args[2]);
     this.launchEvent('load');
 };
 appShell.prototype.initHeader = function(shapeToAppend) {
@@ -89,18 +90,26 @@ appShell.prototype.initContent = function(shapeToAppend) {
     } else {
         this.content.setClass('container');
         this.title = new ds.TextShape('h1');
-        this.congrats = new ds.TextShape('p');
-        this.instruction = new ds.TextShape('p');
-        this.title.updateText("Welcome to Pachamanca");
-        this.congrats.updateText("Congratulations! You have successfully created");
-        this.congrats.updateText(" your Pachamanca application", "append");
-        this.instruction.updateText("You may change the content of this page ");
-        this.instruction.updateText("by sending a Shapes o Text ", "append");
-        this.instruction.updateText("in the init method <br>", "append");
-        this.content.appendShape(new ds.TextShape('hr'));
-        this.content.appendShape(this.title);
-        this.content.appendShape(this.congrats);
-        this.content.appendShape(this.instruction);
+        if (typeof shapeToAppend === 'string') {
+            this.title.setClass('container text-muted');
+            this.title.updateText(shapeToAppend);
+            this.content_custom = this.title;
+        } else {
+            this.congrats = new ds.TextShape('p');
+            this.instruction = new ds.TextShape('p');
+            this.content_custom = new ds.Shape('div');
+            this.title.updateText("Welcome to Pachamanca");
+            this.congrats.updateText("Congratulations! You have successfully created");
+            this.congrats.updateText(" your Pachamanca application", "append");
+            this.instruction.updateText("You may change the content of this page ");
+            this.instruction.updateText("by sending a Shapes o Text ", "append");
+            this.instruction.updateText("in the init method <br>", "append");
+            this.content_custom.appendShape(new ds.TextShape('hr'));
+            this.content_custom.appendShape(this.title);
+            this.content_custom.appendShape(this.congrats);
+            this.content_custom.appendShape(this.instruction);
+        }
+        this.content.appendShape(this.content_custom);
     }
     this.container.appendShape(this.content);
 };
@@ -123,7 +132,7 @@ appShell.prototype.onLoad = function() {
         div.appendShape(img);
         this.content.appendShape(div);
         this.content.buildDom();
-        //this.content.render();
+        this.footer.buildDom();
     }.bind(this);
     console.log('loaded module');
 }
