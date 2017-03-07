@@ -81,12 +81,6 @@ appShell.prototype.initContent = function(shapeToAppend) {
     if (shapeToAppend instanceof ds.Shape) {
         this.custom_content = shapeToAppend;
         this.content.appendShape(this.custom_content);
-    } else if (typeof shapeToAppend === 'string') {
-        this.content.setClass('container');
-        this.title = new ds.TextShape('h1');
-        this.title.updateText(shapeToAppend);
-        this.title.setClass('container text-muted');
-        this.content.appendShape(this.title)
     } else {
         this.content.setClass('container');
         this.title = new ds.TextShape('h1');
@@ -132,7 +126,6 @@ appShell.prototype.onLoad = function() {
         div.appendShape(img);
         this.content.appendShape(div);
         this.content.buildDom();
-        this.footer.buildDom();
     }.bind(this);
     console.log('loaded module');
 }
