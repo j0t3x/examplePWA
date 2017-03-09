@@ -1,8 +1,8 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
-
 module.exports = {
+    exprContextCritical: true,
     devtool: 'eval-source-map',
     entry: __dirname + '/app/tiffinbox.js',
     output: {
@@ -10,13 +10,22 @@ module.exports = {
         filename: 'bundle.js'
     },
     module: {
-        loaders: [
-            { test: /\.json$/, loader: 'json' },
-            { test: /\.(png|jpg)$/, loader: 'url-loader' },
-            //{ test: /\.(js|jsx)$/, exclude: __dirname + '/node_modules/', loaders: ['babel-loader'] },
-            { test: /\.css$/, loader: 'style!css?modules!postcss' },
-            { test: /\.(woff2?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/, loader: "file?name=fonts/[name].[ext]" }
-        ]
+        loaders: [{
+            test: /\.json$/,
+            loader: 'json'
+        }, {
+            test: /\.(png|jpg)$/,
+            loader: 'url-loader'
+        },  {
+            test: /\.css$/,
+            loader: 'style!css?modules!postcss'
+        }, {
+            test: /\.(woff2?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+            loader: "file?name=fonts/[name].[ext]"
+        }, {
+            test: /\.html$/,
+            loader: 'html-loader'
+        }]
     },
     postcss: [
         require('autoprefixer')
@@ -36,7 +45,6 @@ module.exports = {
         hot: true
     }
 };
-
 /*
 
 * html-webpack-plugin: es un plugin de webpack para poder injectar los js en un archivo html
