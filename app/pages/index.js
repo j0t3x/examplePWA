@@ -1,6 +1,8 @@
 var protoPage = require('../utils/protoPage.js');
-var appShell = require('../modules/multishell/index.js');
+var alty_header = require('../modules/alty_header/index.js');
+var alty_exppgf = require('../modules/alty_explanatoryparagraph/index.js');
 var ds = require('domshaper');
+
 var index = function() {
     //console.log(this)
     protoPage.call(this, arguments[0]);
@@ -11,13 +13,24 @@ index.prototype = Object.create(protoPage.prototype);
 index.prototype.constructor = index;
 /*OOP herency*/
 index.prototype.init = function() {
-    var aShell = new appShell(this.router);
-    aShell.activateModule();
-    this.modules.push(aShell);
-    aShell.build(null,null,null);
-    this.content.appendShape(aShell.container);
+
+    var head = new alty_header(this.router);
+    head.activateModule();
+    head.build();
+
+
+    var exp_paragr = new alty_exppgf(this.router);
+    exp_paragr.activateModule();
+    exp_paragr.build();
+
+    this.modules.push(head);
+
+    this.content.appendShape(head.container);
+    this.content.appendShape(exp_paragr.container);
+
     this.content.buildDom();
     this.content.render();
+
     this.launchEvent('close');
 };
 index.prototype.onLoad = function() {
@@ -26,4 +39,5 @@ index.prototype.onLoad = function() {
 index.prototype.onClose = function() {
     console.log('final timer', Date.now());
 };
+
 module.exports = index;

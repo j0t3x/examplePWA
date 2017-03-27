@@ -1,7 +1,0 @@
-[
-    {
-        "name" : "landing",
-        "route": "/landing",
-        "path": "./pages/landing.js"
-    }
-]
