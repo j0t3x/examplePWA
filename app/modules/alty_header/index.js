@@ -2,6 +2,7 @@ var ds = require('domshaper');
 var protoModule = require('../../utils/protoModule.js');
 var styles = require('./styles.css');
 
+
 var index = function(router) {
     protoModule.call(this);
     this.router = router;

@@ -11,4 +11,6 @@ Router.addLib('dealer', Dealer);
 Router.addLib('war', War);
 Router.setRoute('/', require('./pages/index.js'));
 Router.setRoute('/landing', require('./pages/landing.js'));
+Router.setRoute('/signup', require('./pages/signup.js'));
+Router.setRoute('/tutorial', require('./pages/tutorial.js'));
 Router.chooseRoute(Router.currentPage.pathname);

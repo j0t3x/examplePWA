@@ -1,6 +1,6 @@
 //import bootstrap
-require('!style!css!../node_modules/bootstrap/dist/css/bootstrap.min.css');
-
+//require('!style!css!../node_modules/bootstrap/dist/css/bootstrap.min.css');
+require('!style!css!./modules/curiosity/global.css');
 
 
 

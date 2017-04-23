@@ -19,7 +19,7 @@ index.prototype.init = function() {
     head.build();
 
 
-    var exp_paragr = new alty_exppgf(this.router);
+    var exp_paragr = new alty_exppgfgit(this.router);
     exp_paragr.activateModule();
     exp_paragr.build();
 
