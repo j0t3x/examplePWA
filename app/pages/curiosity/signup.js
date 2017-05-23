@@ -1,7 +1,9 @@
-var protoPage = require('../utils/protoPage.js');
+var protoPage = require('../../utils/protoPage.js');
 var ds = require('domshaper');
 
-var curiosity_slider = require('../modules/curiosity/tutorial_carousel/index.js');
+var curiosity_footer = require('../../modules/curiosity/signup_footer/index.js');
+var curiosity_form = require('../../modules/curiosity/signup_form/index.js');
+var curiosity_header = require('../../modules/curiosity/signup_header/index.js');
 
 var index = function() {
     //console.log(this)
@@ -20,7 +22,9 @@ index.prototype.constructor = index;
 /*OOP herency*/
 index.prototype.init = function() {
 
-    this.addSlider();
+    this.addHeader();
+    this.addSignUpForm();
+    this.addFooter();
 
     this.content.buildDom();
     this.content.render();
@@ -29,16 +33,35 @@ index.prototype.init = function() {
     this.content.domElement.style.height = '100%';
     this.launchEvent('close');
 };
-index.prototype.addSlider = function() {
+index.prototype.addHeader = function() {
 
-    var c_slider = new curiosity_slider(this.router);
-    c_slider.activateModule();
-    this.modules.push(c_slider);
-    c_slider.build();
-    this.content.appendShape(c_slider.container);
+    var c_header = new curiosity_header(this.router);
+    c_header.activateModule();
+    this.modules.push(c_header);
+    c_header.build();
+    this.content.appendShape(c_header.container);
 
 };
 
+index.prototype.addSignUpForm = function() {
+
+    var c_form = new curiosity_form(this.router);
+    c_form.activateModule();
+    this.modules.push(c_form);
+    c_form.build();
+    this.content.appendShape(c_form.container);
+
+};
+
+index.prototype.addFooter = function() {
+
+    var c_footer = new curiosity_footer(this.router);
+    c_footer.activateModule();
+    this.modules.push(c_footer);
+    c_footer.build();
+    this.content.appendShape(c_footer.container);
+
+};
 
 index.prototype.onLoad = function() {
     //console.log('started modulec');
