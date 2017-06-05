@@ -1,0 +1,14 @@
+.formunit {
+  width: auto;
+  padding: .1em;
+}
+
+.elicon {
+  display: inline-block !important;
+  width: 10% !important;
+}
+
+.elinput {
+  display: inline-block !important;
+  width: 90% !important;
+}
