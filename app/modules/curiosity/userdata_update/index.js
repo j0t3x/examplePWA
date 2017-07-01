@@ -23,6 +23,7 @@ index.prototype.init = function() {
 
   this.container = new ds.FormShape('/some');
   this.container.addAttr('id', 'userdata');
+  this.container.setClass( styles.cont );
 
   this.buildForm();
 
@@ -37,7 +38,6 @@ index.prototype.onStart = function() {
 
 index.prototype.buildForm = function(){
 
-
   for ( var one in this.userFields ){
     if ( this.userFields.hasOwnProperty( one ) ){
       var sec = this.createComposedTextInputField( one, this.userFields[one].type, this.userFields[one].icon, this.userFields[one].placeholder, this.userFields[one].values );
@@ -45,7 +45,9 @@ index.prototype.buildForm = function(){
     }
   }
 
-  this.container.setSubmitTrigger("Update");
+  var submitter = new ds.ButtonShape('Update');
+  submitter.setClass(styles.button);
+  this.container.setSubmitTrigger(submitter);
 
 
   this.container.on( 'submit', function( ev ){

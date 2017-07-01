@@ -1,5 +1,5 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-@import url('https://fonts.googleapis.com/css?family=Cabin|Hind');
+@import url('https://fonts.googleapis.com/css?family=Dosis:300|Hind');
 
 /*
 	Eventually by HTML5 UP
@@ -90,20 +90,21 @@
 		}
 
 	body {
-		display: -moz-flex;
+		/*display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
 		-moz-flex-direction: column;
 		-webkit-flex-direction: column;
 		-ms-flex-direction: column;
-		flex-direction: column;
+		flex-direction: column;*/
 		-moz-justify-content: center;
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		background-color: #1D2540;
-		padding: 6em 4em 4em 4em;
+		/*background-color: #1D2540;*/
+		background-color: #FCFDFE;
+		/*padding: 6em 4em 4em 4em;*/
 	}
 
 		body > * {
@@ -125,7 +126,7 @@
 		@media screen and (max-width: 1680px) {
 
 			body {
-				padding: 6em 3.5em 3.5em 3.5em;
+				/*padding: 6em 3.5em 3.5em 3.5em;*/
 			}
 
 		}
@@ -133,7 +134,7 @@
 		@media screen and (max-width: 736px) {
 
 			body {
-				padding: 5em 2em 2em 2em;
+				/*padding: 5em 2em 2em 2em;*/
 			}
 
 		}
@@ -141,7 +142,7 @@
 		@media screen and (max-width: 360px) {
 
 			body {
-				padding: 5em 1.25em 1.25em 1.25em;
+				/*padding: 5em 1.25em 1.25em 1.25em;*/
 			}
 
 		}
@@ -291,8 +292,9 @@
 /* Type */
 
 	body, input, select, textarea, button {
-		color: rgba(255, 255, 255, 0.75);
-		font-family: "Cabin", sans-serif;
+		/*color: rgba(255, 255, 255, 0.75);*/
+		color: #000;
+		font-family: "Dosis", sans-serif;
 		font-size: 16pt;
 		font-weight: 400;
 		letter-spacing: -0.01em;
@@ -345,7 +347,8 @@
 		-ms-transition: border-bottom-color 0.2s ease, color 0.2s ease;
 		transition: border-bottom-color 0.2s ease, color 0.2s ease;
 		border-bottom: dotted 1px rgba(255, 255, 255, 0.25);
-		color: #1cb495;
+		/*color: #1cb495;*/
+		color: #000;
 		text-decoration: none;
 	}
 
@@ -356,7 +359,7 @@
 		}
 
 	strong, b {
-		color: #fff;
+		color: #000;
 		font-weight: 700;
 	}
 
@@ -365,18 +368,18 @@
 	}
 
 	p {
-		margin: 0 0 2em 0;
+		/*margin: 0 0 2em 0;*/
 	}
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #fff;
 		font-weight: 700;
 		line-height: 1em;
-		margin: 0 0 1em 0;
+		margin: 0 0 0 0;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-			color: inherit;
+			color: #fff;
 			text-decoration: none;
 		}
 
@@ -425,7 +428,7 @@
 	blockquote {
 		border-left: solid 8px rgba(255, 255, 255, 0.35);
 		font-style: italic;
-		margin: 0 0 2em 0;
+		/*margin: 0 0 2em 0;*/
 		padding: 0.5em 0 0.5em 2em;
 	}
 
@@ -470,7 +473,8 @@
 	}
 
 	header p {
-		color: rgba(255, 255, 255, 0.5);
+		/*color: rgba(255, 255, 255, 0.5);*/
+		color: #fff;
 		position: relative;
 		margin: 0 0 1.5em 0;
 	}
@@ -763,8 +767,9 @@
 		background-color: transparent;
 		border-radius: 6px;
 		border: none;
-		border: solid 2px rgba(255, 255, 255, 0.35);
-		color: inherit;
+		border: solid 2px rgba(0, 0, 0, 0.25);
+		/*color: inherit;*/
+		color: rgba(0, 0, 0, 1);
 		display: block;
 		outline: 0;
 		padding: 0 1em;
@@ -790,7 +795,8 @@
 			-ms-animation: focus 0.1s;
 			animation: focus 0.1s;
 			background-color: rgba(255, 255, 255, 0.125);
-			border-color: #1cb495;
+			border-color: #fe7a47;
+			color: rgba(0, 0, 0, 1);
 		}
 
 	.select-wrapper {
@@ -831,6 +837,7 @@
 	input[type="email"],
 	select {
 		height: 2.75em;
+		color: rgba(0, 0, 0, 1);
 	}
 
 	textarea {
@@ -854,7 +861,8 @@
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: rgba(255, 255, 255, 0.75);
+			/*color: rgba(255, 255, 255, 0.75);*/
+			color: #000;
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -913,27 +921,27 @@
 	}
 
 	::-webkit-input-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
+		color: rgba(0, 0, 0, 1) !important;
 		opacity: 1.0;
 	}
 
 	:-moz-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
+		color: rgba(0, 0, 0, 1) !important;
 		opacity: 1.0;
 	}
 
 	::-moz-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
+		color: rgba(0, 0, 0, 1) !important;
 		opacity: 1.0;
 	}
 
 	:-ms-input-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
+		color: rgba(0, 0, 0, 1) !important;
 		opacity: 1.0;
 	}
 
 	.formerize-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
+		color: rgba(0, 0, 0, 1) !important;
 		opacity: 1.0;
 	}
 
@@ -952,7 +960,7 @@
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-		background-color: #1cb495;
+		background-color: #fe7a47;
 		border-radius: 6px;
 		border: 0;
 		color: #ffffff !important;
@@ -972,7 +980,7 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: #1fcaa7;
+			background-color: #f5ca99;
 		}
 
 		input[type="submit"]:active,
@@ -980,7 +988,7 @@
 		input[type="button"]:active,
 		button:active,
 		.button:active {
-			background-color: #199e83;
+			background-color: #f5ca99;
 		}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,

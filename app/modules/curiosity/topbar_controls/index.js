@@ -13,9 +13,10 @@ index.prototype = Object.create(protoModule.prototype);
 index.prototype.constructor = index;
 index.prototype.init = function() {
 
-  this.container = new ds.Shape('header');
-  this.container.addAttr('id', 'header');
-  this.buildHeader();
+  this.container = new ds.Shape('div');
+  this.container.setClass( styles.cont );
+  //this.container.addAttr('id', 'header');
+  this.topBar();
 
   this.launchEvent('load');
 };
@@ -26,7 +27,7 @@ index.prototype.onStart = function() {
     console.log('start module');
 };
 
-index.prototype.buildHeader = function(){
+index.prototype.topBar = function(){
 
   // <!-- Header -->
   //   <header id="header">
@@ -36,26 +37,27 @@ index.prototype.buildHeader = function(){
   //   </header>
   //
 
-  var header = new ds.Shape('header');
-  header.addAttr( 'id', 'header' );
+  var backButton = new ds.Shape('p');
+  var left = new ds.Shape('span');
+  left.setClass( 'fa fa-angle-left' );
+  left.addAttr( 'aria-hidden', 'true' );
+  backButton.appendShape(left);
+  backButton.setClass( styles.iconc );
 
-  var title = new ds.TextShape('h1');
-  title.updateText( 'Curiosity' );
+  var title = new ds.TextShape('h3');
+  title.updateText( 'Profile' );
+  title.setClass( styles.title );
 
-  var firstmessage = new ds.TextShape('p');
-  firstmessage.addAttr( 'href', '#' );
-  firstmessage.updateText( 'Quick questions answered by millions of people' );
+  var otherIcon = new ds.Shape('p');
+  var elico = new ds.Shape('span');
+  elico.setClass( 'fa fa-share-alt' );
+  elico.addAttr( 'aria-hidden', 'true' );
+  otherIcon.appendShape(elico);
+  otherIcon.setClass( styles.iconc );
 
-  var link = new ds.TextShape('a');
-  link.addAttr( 'href', '#' );
-  link.updateText( 'Did you knew that women like it between 18 and 20...?' );
-
-
+  this.container.appendShape( backButton );
   this.container.appendShape( title );
-  this.container.appendShape( firstmessage );
-  this.container.setClass( styles.margintop, styles.textcolor );
-  firstmessage.appendShape( new ds.Shape('br') );
-  firstmessage.appendShape( link );
+  this.container.appendShape( otherIcon );
 
 };
 

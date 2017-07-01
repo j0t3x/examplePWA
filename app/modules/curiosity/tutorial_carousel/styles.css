@@ -2,6 +2,10 @@
   margin: 0 auto;
 }
 
+.spaceup{
+  margin-top: 25%;
+}
+
 .slider_outer{
    height:100% !important;
 

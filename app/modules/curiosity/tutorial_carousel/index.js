@@ -51,7 +51,7 @@ index.prototype.constructor = index;
 index.prototype.init = function() {
 
   this.container = new ds.Shape('div');
-  this.container.setClass( styles.centered );
+  this.container.setClass( styles.centered, styles.spaceup );
   this.container.addAttr( 'style', 'width:' + this.textSlideW + 'px;' )
 
   this.buildTextSlider();

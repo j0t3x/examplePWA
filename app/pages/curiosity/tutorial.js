@@ -27,6 +27,7 @@ index.prototype.init = function() {
 
     this.content.domElement.style.width = '100%';
     this.content.domElement.style.height = '100%';
+    this.content.domElement.style.padding = '2em';
     this.launchEvent('close');
 };
 index.prototype.addSlider = function() {

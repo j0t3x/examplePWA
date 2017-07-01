@@ -1,0 +1,56 @@
+.cont{
+  width: 100%;
+  padding: 0;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 20px 50px -40px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .8);
+  margin-bottom: .5em;
+}
+
+.profilegroup{
+  width: 100%;
+  text-align: center;
+  display: table;
+  padding: .5em;
+}
+
+.pic{
+  width: 14vh;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 5px rgba(0, 0, 0, .8);
+  /*border:5px solid #000;*/
+  margin: 0 auto;
+  display: table-cell;
+}
+
+.name{
+  display: block;
+  font-size: 1.2em;
+  color: #000;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.onestat{
+  display: table-cell;
+  width: 33.3%;
+}
+
+.statname{
+  font-size: .8em;
+}
+
+.statvalue{
+  font-size: 2em;
+}
+
+.editicon{
+  font-size: .7em;
+  margin-left: .3em;
+}

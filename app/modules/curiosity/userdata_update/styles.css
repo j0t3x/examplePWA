@@ -1,6 +1,11 @@
+.cont{
+  padding: 0 2em 0 2em;
+}
+
 .formunit {
   width: auto;
   padding: .1em;
+  color: #000;
 }
 
 .elicon {
@@ -11,4 +16,10 @@
 .elinput {
   display: inline-block !important;
   width: 90% !important;
+}
+
+.button{
+  padding: 0px 20px 0px 20px;
+  margin-top: 1em;
+  width: 100%;
 }
