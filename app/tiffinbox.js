@@ -15,4 +15,5 @@ Router.setRoute('/signup', require('./pages/curiosity/signup.js'));
 Router.setRoute('/tutorial', require('./pages/curiosity/tutorial.js'));
 Router.setRoute('/question', require('./pages/curiosity/questionBurst.js'));
 Router.setRoute('/profile', require('./pages/curiosity/registerAndUpdate.js'));
+Router.setRoute('/feed', require('./pages/curiosity/feedwall.js'));
 Router.chooseRoute(Router.currentPage.pathname);

@@ -44,5 +44,8 @@
     "war": "git+https://github.com/j0t3x/war.git",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "semantic-ui": "^2.2.13"
   }
 }

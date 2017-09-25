@@ -40,7 +40,12 @@ index.prototype.buildForm = function(){
   emailSection.addAttr( 'placeholder', 'Email Address' );
 
   this.container.addSection( emailSection );
-  this.container.setSubmitTrigger("Sign Up");
+
+  //submit button
+  var submitButton = new ds.ButtonShape('Update');
+  submitButton.setClass('ui button');
+
+  this.container.setSubmitTrigger(submitButton);
 
 
   this.container.on( 'submit', function( ev ){

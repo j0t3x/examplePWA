@@ -5,6 +5,7 @@ var styles = require('./styles.css');
 
 var index = function(router) {
     protoModule.call(this);
+    this.title;
     this.router = router;
     this.container;
     this.content;
@@ -38,29 +39,33 @@ index.prototype.topBar = function(){
   //
 
   var backButton = new ds.Shape('p');
-  var left = new ds.Shape('span');
-  left.setClass( 'fa fa-angle-left' );
-  left.addAttr( 'aria-hidden', 'true' );
+  var left = new ds.Shape('i');
+  left.setClass( 'sidebar icon' );
+
   backButton.appendShape(left);
   backButton.setClass( styles.iconc );
 
-  var title = new ds.TextShape('h3');
-  title.updateText( 'Profile' );
-  title.setClass( styles.title );
+  this.title = new ds.TextShape('h3');
+  this.title.updateText( 'Profile' );
+  this.title.setClass( styles.title );
 
   var otherIcon = new ds.Shape('p');
-  var elico = new ds.Shape('span');
-  elico.setClass( 'fa fa-share-alt' );
+  var elico = new ds.Shape('i');
+  elico.setClass( 'share alternate icon' );
   elico.addAttr( 'aria-hidden', 'true' );
   otherIcon.appendShape(elico);
   otherIcon.setClass( styles.iconc );
 
   this.container.appendShape( backButton );
-  this.container.appendShape( title );
+  this.container.appendShape( this.title );
   this.container.appendShape( otherIcon );
 
 };
 
+
+index.prototype.updateTitle = function( title ){
+  this.title.updateText( title );
+};
 
 
 

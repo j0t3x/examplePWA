@@ -23,7 +23,7 @@ index.prototype.init = function() {
 
   this.container = new ds.FormShape('/some');
   this.container.addAttr('id', 'userdata');
-  this.container.setClass( styles.cont );
+  this.container.setClass( 'ui form', styles.cont );
 
   this.buildForm();
 
@@ -45,9 +45,9 @@ index.prototype.buildForm = function(){
     }
   }
 
-  var submitter = new ds.ButtonShape('Update');
-  submitter.setClass(styles.button);
-  this.container.setSubmitTrigger(submitter);
+  var submitButton = new ds.ButtonShape('Update');
+  submitButton.setClass('ui primary huge button', styles.button);
+  this.container.setSubmitTrigger(submitButton);
 
 
   this.container.on( 'submit', function( ev ){
@@ -62,12 +62,7 @@ index.prototype.buildForm = function(){
 index.prototype.createComposedTextInputField = function( name, type, iconclass, legend, values = [] ){
 
   var box = new ds.Shape('div');
-  box.setClass( styles.formunit );
-
-  var icon = new ds.Shape('i');
-  icon.setClass( iconclass );
-  icon.addAttr( 'aria-hidden', 'true' );
-  icon.setClass( styles.elicon );
+  box.setClass( 'ui input fields', styles.formunit );
 
   var input;
 
@@ -83,6 +78,7 @@ index.prototype.createComposedTextInputField = function( name, type, iconclass, 
 
   if( type === 'select' ){
     input = new ds.Shape( 'select', name );
+    input.setClass('ui dropdown');
 
     var placeh = new ds.TextShape( 'option' );
     placeh.updateText( legend );
@@ -98,9 +94,7 @@ index.prototype.createComposedTextInputField = function( name, type, iconclass, 
 
   }
 
-  input.setClass( styles.elinput );
-
-  box.appendShape( icon );
+  ///input.setClass( 'fields' );
   box.appendShape( input );
 
   return box;
